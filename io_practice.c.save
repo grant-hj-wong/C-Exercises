@@ -1,0 +1,21 @@
+/* Practicing basic I/O - By Grant Wong */
+#include <stdio.h>
+#include <stdlib.h>
+
+int rand_num();
+
+int main(int argc, char **argv){
+    const int MAX = 20;
+    while (1){
+        int rand1 = rand_num(MAX), rand2 = rand_num(MAX);
+    printf("What is %d + %d?\n", rand1, rand2);
+    char str_ans[] = gets(ans);
+    int int_ans = atoi(str_ans);
+    char output[15]= (rand1 + rand2) == int_ans ? "Correct!" : "Incorrect."
+}
+
+int rand_num(int max){
+    time_t t;
+    srand((unsigned) time(&t);
+    return rand % max;
+}
