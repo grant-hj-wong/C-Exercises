@@ -33,14 +33,12 @@ void main(void) {
     // fgets() stores the newline and whitespaces, remove them, store in
     // cleaned version.
     char clean_str[strlen(str)], *p = str, *q = clean_str;
-    int offset = 0; // Initialise to 1 to account for null character.
     while (p < str + strlen(str)) {
         if (isalnum(*p)) {
             *q = tolower(*p);
             q++;
             p++;
         } else {
-            offset++;
             p++;
         }
     }
