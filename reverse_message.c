@@ -1,13 +1,25 @@
 #include <stdio.h>
 #include <string.h>
 
+void reverse_string(char msg[]);
+
 int main(void) {
     printf("Please enter a message to be reversed: ");
     char msg[255];
-    scanf("%s", msg);
-    char *p = &msg[strlen(msg) - 1]; // Point to the last character.
-    printf("The message reversed is: ");
-    while (p >= msg) {
-        printf("%c", *p--);
+    fgets(msg, 255, stdin);
+    reverse_string(msg);
+    printf("The message reversed is: %s\n", msg);
+
+}
+
+void reverse_string(char msg[]) {
+    char *start = msg;
+    char *end = start + strlen(msg) - 1;
+    while (start < end) {
+        char temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
     }
 }
